@@ -6,4 +6,5 @@
         <%= link_to "read more", "#{hospitals_path}/#{h.id}" %> 
     </li>
     <% end%>
+    <%= paginate @hospitals %>
 </ul>
