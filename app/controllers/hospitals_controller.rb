@@ -1,7 +1,12 @@
 class HospitalsController < ApplicationController
     def index
-        @hospitals = Hospital.order(:name).page(params[:page])
+        @hospitals = SearchHospitalQuery.new
+        @hospitals = @hospitals.search(params["search"]).page(params[:page])
         render 'index'
+    end
+    
+    def search
+        redirect_to "/hospitals?search=#{params[:search]}"
     end
     
     def detailed
