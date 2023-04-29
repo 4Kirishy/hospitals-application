@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HospitalsApp</title>
+    <title>eHealth | Kyrylo Teplynskyi</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,8 +12,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
+  <body class="text-neutral-900">
     <%= render 'shared/header' %>
+    <main class="container mx-auto my-0 px-10">
     <%= yield %>
+    </main>
   </body>
 </html>
