@@ -5,7 +5,7 @@ class HospitalsController < ApplicationController
     end
     
     def detailed
-        @hospital = Hospital.find(params['id'].to_i)
+        @hospital = Hospital.includes(:departments).find(params['id'].to_i)
         render 'detailed'
     end
 end
