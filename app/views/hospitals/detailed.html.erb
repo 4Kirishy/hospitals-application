@@ -1,0 +1,11 @@
+<h1><%= @hospital.name %></h1>
+<h2>Departments:</h2>
+<ul>
+    <% @hospital.departments.each do |d| %>
+    <li>
+        <h3><%= d.name %></h3>
+        <%= link_to "read more", "/hospitals" %>
+        <!-- change /hospitals to "#{departments_path}/#{d.id}" -->
+    </li>
+    <% end %>
+</ul>

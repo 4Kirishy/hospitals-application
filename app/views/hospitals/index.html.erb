@@ -1,0 +1,10 @@
+<ul>
+    <% @hospitals.each do |h| %>
+    <li>
+        <h4><%= h.name %></h4>
+        <p><%= h.location %></p>
+        <%= link_to "read more", "#{hospitals_path}/#{h.id}" %> 
+    </li>
+    <% end%>
+    <%= paginate @hospitals %>
+</ul>
