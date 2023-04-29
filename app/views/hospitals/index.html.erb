@@ -1,10 +1,18 @@
+<h1 class="text-2xl font-semibold mb-5">All Hospitals</h1>
+<div class="flex items-center gap-6 justify-end mb-5">
+<%= link_to_prev_page @hospitals, '⬅', class:"text-4xl"%>
+<%= link_to_next_page @hospitals, '➡', class:"text-4xl"%>
+</div>
 <ul>
     <% @hospitals.each do |h| %>
-    <li>
-        <h4><%= h.name %></h4>
-        <p><%= h.location %></p>
-        <%= link_to "read more", "#{hospitals_path}/#{h.id}" %> 
+    <li class="p-4 border border-neutral-500 mb-4 flex flex-col">
+        <h4 class="text-xl font-medium mb-2"><%= h.name %></h4>
+        <p class="text-neutral-600 font-medium"><%= h.location %></p>
+        <%= link_to "read more", "#{hospitals_path}/#{h.id}", class: "self-end text-blue-600 text-xl hover:underline" %> 
     </li>
     <% end%>
-    <%= paginate @hospitals %>
 </ul>
+<div class="flex items-center gap-6 justify-end mb-5">
+<%= link_to_prev_page @hospitals, '⬅', class:"text-4xl"%>
+<%= link_to_next_page @hospitals, '➡', class:"text-4xl"%>
+</div>
