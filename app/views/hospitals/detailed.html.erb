@@ -1,10 +1,10 @@
-<h1><%= @hospital.name %></h1>
-<h2>Departments:</h2>
+<h1 class="text-2xl mb-10 font-semibold"><%= @hospital.name %></h1>
+<h2 class="text-xl font-semibold mb-5">Departments:</h2>
 <ul>
     <% @hospital.departments.each do |d| %>
-    <li>
-        <h3><%= d.name %></h3>
-        <%= link_to "read more", "/hospitals" %>
+    <li class="p-4 border border-neutral-900 flex items-center justify-between mb-2">
+        <h3 class="font-semibold"><%= d.name %></h3>
+        <%= link_to "read more", "/hospitals", class: "text-blue-800 hover:underline" %>
         <!-- change /hospitals to "#{departments_path}/#{d.id}" -->
     </li>
     <% end %>
