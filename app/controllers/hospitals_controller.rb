@@ -1,8 +1,12 @@
 class HospitalsController < ApplicationController
     def index
-        @hospitals = SearchHospitalQuery.new
-        @hospitals = @hospitals.search(params["search"]).page(params[:page])
-        render 'index'
+        if not user_signed_in?
+            redirect_to root_path
+        else
+            @hospitals = SearchHospitalQuery.new
+            @hospitals = @hospitals.search(params["search"]).page(params[:page])
+            render 'index'
+        end
     end
     
     def search
