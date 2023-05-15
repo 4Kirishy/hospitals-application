@@ -4,4 +4,8 @@ class Doctor < ApplicationRecord
     
     has_one :department
     has_one :specialty
+    
+    def to_s
+        first_name
+    end
 end
