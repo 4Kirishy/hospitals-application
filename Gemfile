@@ -76,3 +76,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "prawn", "~> 2.4"
+gem "prawn-table", "~> 0.2.2"
