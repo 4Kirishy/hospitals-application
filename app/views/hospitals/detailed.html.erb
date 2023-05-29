@@ -1,4 +1,9 @@
+
+<% if @hospital.image.attached? %>
+<%= image_tag @hospital.image, class: "w-80 h-80 object-cover" %>
+<% end %>
 <h1 class="text-2xl mb-10 font-semibold"><%= @hospital.name %></h1>
+<h2 class="text-2xl mb-10 font-semibold"><%= @hospital.category %></h2>
 <h2 class="text-xl font-semibold mb-5">Departments:</h2>
 <ul>
     <% @hospital.departments.each do |d| %>
@@ -9,3 +14,4 @@
     </li>
     <% end %>
 </ul>
+<%= link_to "pdf", hospitals_pdf_path(@hospital.id.to_i), target: "_blank" %>

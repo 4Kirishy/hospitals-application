@@ -22,3 +22,4 @@
 <%= link_to_prev_page @hospitals, '⬅', class:"text-4xl"%>
 <%= link_to_next_page @hospitals, '➡', class:"text-4xl"%>
 </div>
+<%= link_to "Export", hospitals_path(format: 'csv') %>

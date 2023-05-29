@@ -7,7 +7,6 @@
          <% if user_signed_in? %>
          <%= button_to "sign out", destroy_user_session_path ,method: :delete, class: "p-1 px-2 bg-blue-600 text-white" %>
          <% else %>
-         <%= link_to "sign up", new_user_registration_path, class: "p-1 px-2 bg-blue-600 text-white" %>
          <%= link_to "login", new_user_session_path, class: "p-1 px-2 bg-blue-600 text-white" %>
          <% end%>
     </nav>
