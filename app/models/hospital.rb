@@ -2,6 +2,9 @@ require 'csv'
 class Hospital < ApplicationRecord
     has_many :departments, dependent: :destroy
     has_many :patient_records
+    
+    has_one_attached :image, :dependent => :destroy
+    
 
     validates :name, presence: true
     validates :location, presence: true

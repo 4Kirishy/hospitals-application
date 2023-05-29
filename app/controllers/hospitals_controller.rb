@@ -2,9 +2,9 @@ class HospitalsController < ApplicationController
     before_action :set_hospital, only: ['pdf']
     
     def index
-        if not user_signed_in?
-            redirect_to root_path
-        else
+        # if not user_signed_in?
+        #     redirect_to root_path
+        # else
             @hospitals = SearchHospitalQuery.new
             @hospitals = @hospitals.search(params["search"]).page(params[:page])
             
@@ -14,7 +14,7 @@ class HospitalsController < ApplicationController
             end
             
             # render 'index'
-        end
+        # end
     end
     
     def search
